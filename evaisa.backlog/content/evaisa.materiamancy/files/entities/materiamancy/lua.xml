@@ -1,0 +1,7 @@
+<Entity>
+    <LuaComponent
+        script_source_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/scripts/materiamancy/on_added.lua"
+        execute_every_n_frame="1"
+        execute_times="1"
+    />
+</Entity>

@@ -1,0 +1,11 @@
+                    <Entity>
+                        <VariableStorageComponent
+                            name="mm_x_offset"
+                            value_int="7"
+                        />
+                        <VariableStorageComponent
+                            name="mm_y_offset"
+                            value_int="4"
+                        />
+                    </Entity>        
+                

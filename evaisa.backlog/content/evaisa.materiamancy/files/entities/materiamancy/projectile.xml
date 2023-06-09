@@ -1,0 +1,131 @@
+<Entity name="$projectile_default">
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+			gravity_y="0"
+			air_friction="0.8"
+			mass="0.15"
+			>
+		</VelocityComponent>
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+    lob_min="0.5"
+    lob_max="0.7"
+    speed_min="180"
+    speed_max="180"
+    friction="1"
+    direction_random_rad="0.01"
+    on_death_explode="0"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="0"
+    explosion_dont_damage_shooter="1"
+    on_collision_die="0"
+    on_collision_remove_projectile="0"
+    lifetime="240"
+    damage="0.05"
+    damage_scaled_by_speed="0"
+    lifetime_randomness="7"
+    ragdoll_force_multiplier="0"
+    hit_particle_force_multiplier="0.2"
+    create_shell_casing="0"
+    muzzle_flash_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/entities/materiamancy/trigger_projectile.xml"
+    shoot_light_flash_r="255"
+    shoot_light_flash_g="240"
+    shoot_light_flash_b="30"
+    shoot_light_flash_radius="64"
+    penetrate_entities="0"
+    penetrate_world="1"
+    penetrate_world_velocity_coeff="1"
+    damage_every_x_frames="0"
+    die_on_low_velocity="1"
+    die_on_low_velocity_limit="50"
+    bounces_left="0"
+    bounce_energy="0"
+    bounce_at_any_angle="0"
+    on_death_emit_particle="0"
+    collide_with_shooter_frames="6"
+    friendly_fire="0"
+    velocity_sets_rotation="1"
+    velocity_updates_animation="1"
+    velocity_sets_scale="0"
+    ragdoll_fx_on_collision="BLOOD_EXPLOSION"
+	knockback_force="2"
+    >
+	<damage_by_type>
+	</damage_by_type>
+    <config_explosion>
+    </config_explosion>
+  </ProjectileComponent>
+  
+    <LuaComponent
+        script_source_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/scripts/materiamancy/pathing.lua"
+        execute_every_n_frame="1"
+        execute_times="-1"
+        vm_type="ONE_PER_COMPONENT_INSTANCE"        
+    />
+
+    <LuaComponent
+        script_source_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/scripts/materiamancy/init_projectile.lua"
+        execute_every_n_frame="1"
+        execute_times="1"
+        vm_type="ONE_PER_COMPONENT_INSTANCE"        
+    />
+
+    <LuaComponent
+        script_source_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/scripts/materiamancy/apply_world_collision.lua"
+        execute_every_n_frame="1"
+        execute_times="-1"
+        vm_type="ONE_PER_COMPONENT_INSTANCE"        
+    />
+  <!--
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/evaisa.backlog/content/evaisa.materiamancy/files/entities/materiamancy/gfx/pixel.png" 
+    next_rect_animation=""
+    rect_animation="" 
+     >
+  </SpriteComponent>
+-->
+
+  <ParticleEmitterComponent
+          _enabled="1"
+          emitted_material_name="spark_white"
+          offset.x="0"
+          offset.y="0"
+          x_pos_offset_min="0"
+          x_pos_offset_max="0"
+          y_pos_offset_min="0"
+          y_pos_offset_max="0"
+          gravity.y="0"
+          x_vel_min="0"
+          x_vel_max="0"
+          y_vel_min="0"
+          y_vel_max="0"
+          count_min="2"
+          count_max="3"
+          lifetime_min="1.0"
+          lifetime_max="1.0"
+          airflow_force="1.0"
+          airflow_time="0.701"
+          airflow_scale="0.8"
+          is_trail="1"
+          trail_gap="1.0"
+          create_real_particles="0"
+          emit_cosmetic_particles="1"
+          render_on_grid="1"
+          emission_interval_min_frames="1"
+          emission_interval_max_frames="1"
+          fade_based_on_lifetime="1"
+          is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.snd"
+      event_root="player_projectiles/bullet_disc">
+  </AudioComponent>
+
+</Entity>
+

@@ -1,0 +1,23 @@
+<Sprite 
+	filename="mods/evaisa.backlog/content/evaisa.difficulty/files/gfx/lines2.png" 
+	offset_x="0" 
+	offset_y="0" 
+	default_animation="default"
+	>
+	
+  <RectAnimation 
+	name="default" 
+	pos_x="0" 
+	pos_y="0" 
+	offset_x="0" 
+	offset_y="0" 
+	has_offset="0"
+	frame_count="1" 
+	frame_width="100" 
+	frame_height="8" 
+	frame_wait="0.24" 
+	frames_per_row="1" 
+	loop="1"  >
+  </RectAnimation>
+  
+</Sprite>

@@ -1,0 +1,28 @@
+<Entity tags="enemy_spawner">
+<!--
+    <SpriteComponent 
+        _enabled="1" 
+        alpha="1" 
+        offset_x="2.5"
+        offset_y="2.5"
+        image_file="data/ui_gfx/debug_marker.png" 
+        
+        >
+    </SpriteComponent>
+    
+    <LightComponent 
+        _enabled="1" 
+        radius="64" >
+    </LightComponent>
+    -->
+    <LuaComponent 
+        script_source_file="mods/evaisa.backlog/content/evaisa.difficulty/files/scripts/spawner_handler.lua" 
+        execute_every_n_frame = "60"
+        >
+    </LuaComponent>
+    <VariableStorageComponent
+        name="time_since_last_monster"
+        value_int="10"
+        >
+    </VariableStorageComponent>
+</Entity>

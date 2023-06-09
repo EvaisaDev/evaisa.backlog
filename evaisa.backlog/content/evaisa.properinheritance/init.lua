@@ -1,0 +1,1 @@
+ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/evaisa.backlog/content/evaisa.properinheritance/files/gun_actions.lua" )
