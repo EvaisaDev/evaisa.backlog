@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global, undefined-global
 dofile("data/scripts/lib/mod_settings.lua")
 
 
@@ -16,7 +17,6 @@ mod_settings =
 				ui_name = "Materiamancy",
 				ui_description = "Adds a spell which lets you use the environment as your weapon.",
 				value_default = false,
-				---@diagnostic disable-next-line: undefined-global
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
             {
@@ -24,7 +24,6 @@ mod_settings =
 				ui_name = "graveyard",
 				ui_description = "Adds a kind of meta progression, where you can find loot from previous runs.",
 				value_default = false,
-				---@diagnostic disable-next-line: undefined-global
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
             {
@@ -32,7 +31,6 @@ mod_settings =
 				ui_name = "TMTRAINER",
 				ui_description = "Adds the TMTRAINER item from BOI as a perk to Noita.",
 				value_default = false,
-				---@diagnostic disable-next-line: undefined-global
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
             {
@@ -40,7 +38,6 @@ mod_settings =
 				ui_name = "Monsoon",
 				ui_description = "Adds a risk of rain style time scaled difficulty meter to Noita.",
 				value_default = false,
-				---@diagnostic disable-next-line: undefined-global
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
             {
@@ -48,7 +45,6 @@ mod_settings =
 				ui_name = "Proper Inheritance",
 				ui_description = "Makes spells inherit modifiers in a more logical way.",
 				value_default = false,
-				---@diagnostic disable-next-line: undefined-global
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
 		},
@@ -74,16 +70,14 @@ mod_settings =
                         value_max = 100,
                         value_display_multiplier = 1,
                         value_display_formatting = " $0",
-                        ---@diagnostic disable-next-line: undefined-global
-				        scope = MOD_SETTING_SCOPE_NEW_GAME,
+                        scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
                     {
                         id = "graveyard.item_disarray",
                         ui_name = "Item Disarray",
                         ui_description = "Dead people do not keep their stuff organized well.",
                         value_default = true,
-                        ---@diagnostic disable-next-line: undefined-global
-				        scope = MOD_SETTING_SCOPE_NEW_GAME,
+                        scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
                     {
                         id = "graveyard.item_decay",
@@ -94,8 +88,7 @@ mod_settings =
                         value_max = 100,
                         value_display_multiplier = 1,
                         value_display_formatting = " $0%",
-                        ---@diagnostic disable-next-line: undefined-global
-				        scope = MOD_SETTING_SCOPE_NEW_GAME,
+                        scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
                     {
                         id = "graveyard.max_loot_points",
@@ -106,16 +99,14 @@ mod_settings =
                         value_max = 100,
                         value_display_multiplier = 1,
                         value_display_formatting = " $0",
-                        ---@diagnostic disable-next-line: undefined-global
-				        scope = MOD_SETTING_SCOPE_NEW_GAME,
+                        scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
                     {
                         id = "graveyard.remove_after_loot",
                         ui_name = "Remove grave after looting",
                         ui_description = "After looting a grave it will not appear in future runs.",
                         value_default = false,
-                        ---@diagnostic disable-next-line: undefined-global
-				        scope = MOD_SETTING_SCOPE_NEW_GAME,
+                        scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
 				},
 			},
@@ -132,7 +123,6 @@ mod_settings =
                         ui_description = "The difficulty of the game.",
                         value_default = "normal",
                         values = { {"noob","Noob"}, {"normal","Normal"}, {"hard","Hard"}, {"nightmare","Nightmare"}, {"death","You will die"}, {"dev","Development"} },
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                         change_fn = mod_setting_change_callback,
                     },
@@ -143,7 +133,6 @@ mod_settings =
                         value_default = "0",
                         text_max_length = 5,
                         allowed_characters = "-0123456789",
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
                     {
@@ -153,7 +142,6 @@ mod_settings =
                         value_default = "0",
                         text_max_length = 5,
                         allowed_characters = "-0123456789",
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
                     {
@@ -161,7 +149,6 @@ mod_settings =
                         ui_name = "Show Difficulty Value",
                         ui_description = "Display the difficulty coefficient in the difficulty bar.",
                         value_default = true,
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
                     {
@@ -169,7 +156,6 @@ mod_settings =
                         ui_name = "Pause in Mountain",
                         ui_description = "Pause the difficulty timer in the holy mountain",
                         value_default = true,
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
                     {
@@ -177,7 +163,6 @@ mod_settings =
                         ui_name = "Pause",
                         ui_description = "Pause the difficulty timer",
                         value_default = false,
-                        ---@diagnostic disable-next-line: undefined-global
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
                 },
@@ -187,18 +172,14 @@ mod_settings =
 }
 
 function ModSettingsUpdate( init_scope )
-    ---@diagnostic disable-next-line: undefined-global
 	local old_version = mod_settings_get_version( mod_id )
-    ---@diagnostic disable-next-line: undefined-global
 	mod_settings_update( mod_id, mod_settings, init_scope )
 end
 
 function ModSettingsGuiCount()
-    ---@diagnostic disable-next-line: undefined-global
 	return mod_settings_gui_count( mod_id, mod_settings )
 end
 
 function ModSettingsGui( gui, in_main_menu )
-    ---@diagnostic disable-next-line: undefined-global
 	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
 end
