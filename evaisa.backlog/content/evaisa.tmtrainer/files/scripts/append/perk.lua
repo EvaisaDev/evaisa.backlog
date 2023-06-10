@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global, undefined-global
 local old_perk_get_spawn_order = perk_get_spawn_order
 function perk_get_spawn_order( ignore )
     if(GameHasFlagRun("TMTRAINER"))then

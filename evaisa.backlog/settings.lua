@@ -1,10 +1,11 @@
-dofile("data/scripts/lib/mod_settings.lua") 
+---@diagnostic disable: lowercase-global, undefined-global
+dofile("data/scripts/lib/mod_settings.lua")
 
 
 
 local mod_id = "evaisa.backlog" -- This should match the name of your mod's folder.
 mod_settings_version = 1 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value. 
-mod_settings = 
+mod_settings =
 {
 	{
 		category_id = "enabled_mods",
@@ -58,7 +59,7 @@ mod_settings =
 				ui_name = "Graveyard Settings",
 				ui_description = "The settings for the graveyard mod.",
 				foldable = true,
-				_folded = true, 
+				_folded = true,
 				settings = {
                     {
                         id = "graveyard.max_storage",
@@ -107,14 +108,14 @@ mod_settings =
                         value_default = false,
                         scope = MOD_SETTING_SCOPE_NEW_GAME,
                     },
-				}, 
+				},
 			},
             {
                 category_id = "difficulty_settings",
                 ui_name = "Monsoon Settings",
                 ui_description = "The settings for the Monsoon mod.",
                 foldable = true,
-                _folded = true, 
+                _folded = true,
                 settings = {
                     {
                         id = "difficulty.difficulty",
@@ -164,14 +165,14 @@ mod_settings =
                         value_default = false,
                         scope = MOD_SETTING_SCOPE_RUNTIME,
                     },
-                },     
-            },                 
+                },
+            },
 		},
 	},
 }
 
 function ModSettingsUpdate( init_scope )
-	local old_version = mod_settings_get_version( mod_id ) 
+	local old_version = mod_settings_get_version( mod_id )
 	mod_settings_update( mod_id, mod_settings, init_scope )
 end
 
@@ -181,6 +182,4 @@ end
 
 function ModSettingsGui( gui, in_main_menu )
 	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
-
-
 end
