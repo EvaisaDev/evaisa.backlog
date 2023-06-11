@@ -1,5 +1,5 @@
 local values = {
-    { "_enabled",                      true             },
+    --[[{ "_enabled",                      true             },]]
     { "lob_min",                       0.0              },
     { "lob_max",                       0.0              },
     { "speed_min",                     100000000000000  },
@@ -34,5 +34,11 @@ local entity_id = GetUpdatedEntityID()
 local projcomp = EntityGetFirstComponent(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
 local comps = EntityGetAllComponents(entity_id) or {}
 for i=1,#values do ComponentSetValue2(projcomp, values[i][1], values[i][2]) end
-for i=1,#comps do if ComponentGetTypeName(comps[i])~="ProjectileComponent" then EntityRemoveComponent(entity_id, comps[i]) end end
+
+local component_whitelist = {
+    ProjectileComponent = true,
+    VelocityComponent = true,
+}
+
+for i=1,#comps do if not component_whitelist[ComponentGetTypeName(comps[i])] then EntityRemoveComponent(entity_id, comps[i]) end end
 EntityKill(entity_id)
