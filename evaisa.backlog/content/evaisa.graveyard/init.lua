@@ -115,7 +115,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 				table.insert(available_loadouts, loadout)
 			end
 		end
-	end
+	end	
 
 	for i, v in ipairs(available_loadouts) do
 		available_loadouts[i].vector = vector.new(v.x, v.y)
@@ -249,17 +249,17 @@ function SpawnGrave(x, y, loadout_string, loadout_id)
 	return entity
 end
 
-local graves = {}
+--local graves = {}
 
 function OnWorldPreUpdate() 
-	RenderOffScreenMarkers(graves)
+	--RenderOffScreenMarkers(graves)
 
 	local x, y = GameGetCameraPos()
 	local position = vector.new(x, y)
 	for i, v in ipairs(available_loadouts)do
 		if(position:distance(v.vector) < 300)then
 			local grave = SpawnGrave(v.x, v.y, v.original_string, v.id)
-			table.insert(graves, grave)
+			--table.insert(graves, grave)
 			table.remove(available_loadouts, i)
 			break;
 		end
