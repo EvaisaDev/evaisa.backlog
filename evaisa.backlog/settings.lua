@@ -47,6 +47,20 @@ mod_settings =
 				value_default = false,
 				scope = MOD_SETTING_SCOPE_NEW_GAME,
 			},
+            {
+				id = "evaisa.lidar",
+				ui_name = "Lidar",
+				ui_description = "There is no light, your only guide is your lidar gun.",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
+            {
+				id = "evaisa.objects",
+				ui_name = "Curios",
+				ui_description = "Adds a variety of new items to play around with.",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_NEW_GAME,
+			},
 		},
 	},
     {

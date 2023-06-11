@@ -1,0 +1,20 @@
+<Entity >
+
+<SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/evaisa.backlog/content/evaisa.objects/files/entities/misc/debug_blue.png"  
+    offset_x="4" 
+    offset_y="4" 
+     
+	update_transform_rotation="0" 
+    
+    >
+</SpriteComponent>
+
+<LightComponent 
+_enabled="1" 
+radius="64" >
+</LightComponent>
+
+</Entity>

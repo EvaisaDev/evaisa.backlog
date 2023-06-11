@@ -1,0 +1,255 @@
+<Entity tags="hittable,teleportable_NOT,item_physics" >
+
+  <!-- physical presence -->
+  
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="0" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="1"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/evaisa.backlog/content/evaisa.objects/files/entities/obelysk/obelysk.png"
+    material="conversion_stone"
+  ></PhysicsImageShapeComponent>
+
+  <VelocityComponent
+    _tags="enabled_in_world"
+  ></VelocityComponent>
+
+  <SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/evaisa.backlog/content/evaisa.objects/files/entities/obelysk/obelysk.png"
+  ></SpriteComponent>
+
+  <LuaComponent
+    _tags="enabled_in_hand"
+		script_source_file="mods/evaisa.backlog/content/evaisa.objects/files/scripts/objects/reflect_projectiles_obelysk.lua"
+    execute_on_added="1"
+    execute_every_n_frame="1"
+  ></LuaComponent>
+
+ 
+	<AbilityComponent
+		ui_name="you shouldnt be able to see this"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+  
+  <LightComponent 
+    _tags="enabled_in_hand,enabled_in_world,item_identified"
+    _enabled="1" 
+    radius="130"
+    fade_out_time="1.5" 
+    r="240"
+    g="180"
+    b="120" >
+  </LightComponent>
+  
+  <ParticleEmitterComponent 
+  		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_yellow"
+		velocity_always_away_from_center="50"
+		area_circle_radius.min="1"
+		area_circle_radius.max="30"
+		x_vel_min="1"
+		x_vel_max="1"
+		y_vel_min="1"
+		y_vel_max="1"
+		gravity.y="0.0"
+		lifetime_min="5.5"
+		lifetime_max="5.5"
+		count_min="10"
+		count_max="30"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="4"
+		area_circle_radius.max="4"
+		cosmetic_force_create="1"
+		airflow_force="5"
+		airflow_time="2"
+		airflow_scale="12"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		emit_cosmetic_particles="1"
+		is_emitting="0"
+		>
+	</ParticleEmitterComponent>
+
+  <LightComponent 
+    _tags="enabled_in_hand,enabled_in_world,item_identified"
+    _enabled="1" 
+    radius="16"
+    fade_out_time="1.5" 
+    r="255"
+    g="255"
+    b="255" >
+  </LightComponent>
+  
+  <MaterialInventoryComponent 
+    _enabled="1" 
+    drop_as_item="0" 
+    on_death_spill="1"
+    leak_on_damage_percent="0"
+    audio_collision_size_modifier_amount="1"
+    >
+    <count_per_material_type>
+      <Material material="gold" count="750"  />
+	  </count_per_material_type>
+  </MaterialInventoryComponent>
+
+  <PhysicsAIComponent
+  	target_vec_max_len="0.0"
+		force_coeff="0.0"
+		force_balancing_coeff="0"
+		force_max="0"
+		torque_coeff="0"
+		torque_balancing_coeff="0"
+		torque_max="0.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="0"
+		damage_deactivation_time_max="0" 
+  >
+  </PhysicsAIComponent>
+
+ 		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			creature_detection_range_x="0"
+			creature_detection_range_y="0"
+			sense_creatures="0"
+			needs_food="0"
+			attack_ranged_enabled="0"
+			attack_melee_enabled="0"
+			can_fly="0"  
+			eye_offset_y="0"
+			>
+		</AnimalAIComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<PathFindingComponent
+		    distance_to_reach_node_x="20"
+		    distance_to_reach_node_y="20"
+			frames_to_get_stuck="120"
+			can_jump="0" 
+			can_fly="1"
+			jump_speed="0"
+			>
+		</PathFindingComponent>
+
+  <GenomeDataComponent 
+    _enabled="1" 
+    food_chain_rank="7" 
+    herd_id="player" 
+    is_predator="0" >
+
+  </GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="0" 
+			run_velocity="24"  >
+		</CharacterPlatformingComponent>
+    
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_max_x="1" 
+			aabb_max_y="1" 
+			aabb_min_x="1" 
+			aabb_min_y="1" 
+			>
+		</HitboxComponent>
+	
+  
+    <CharacterDataComponent 
+			collision_aabb_min_x="0"
+			collision_aabb_max_x="0"  
+			collision_aabb_min_y="0"
+			collision_aabb_max_y="0"
+			mass="3.0"
+			>
+		</CharacterDataComponent>
+
+
+
+  <DamageModelComponent 
+    air_needed="0" 
+    blood_material="spark_yellow" 
+    drop_items_on_death="0" 
+    falling_damage_damage_max="1.2" 
+    falling_damage_damage_min="0.1" 
+    falling_damage_height_max="250" 
+    falling_damage_height_min="70" 
+    falling_damages="0" 
+    fire_damage_amount="0.4" 
+    fire_probability_of_ignition="0"
+	critical_damage_resistance="1"
+    hp="200" 
+    is_on_fire="0" 
+    materials_create_messages="0" 
+    materials_damage="1" 
+	materials_that_damage="fire,lava,acid"
+	materials_how_much_damage="0.0002,0.0001,0.001"
+    ragdoll_filenames_file="" 
+    ragdoll_material="" >
+	<damage_multipliers
+		melee="0.1"
+		>
+	</damage_multipliers>
+  </DamageModelComponent>
+
+  <ExplodeOnDamageComponent
+    explode_on_death_percent="1"
+    explode_on_damage_percent="0.0"
+    physics_body_modified_death_probability="0.9" 
+    physics_body_destruction_required="0.50"
+  	>
+    <config_explosion
+      never_cache="0"
+      damage="2.6"
+      camera_shake="40" 
+      explosion_radius="40" 
+      explosion_sprite="data/particles/explosion_032.xml" 
+      explosion_sprite_lifetime="10" 
+      create_cell_probability="50" 
+      hole_destroy_liquid="0" 
+      load_this_entity="data/entities/particles/particle_explosion/main_green.xml"
+      hole_enabled="1" 
+      ray_energy="2500000"
+      particle_effect="1" 
+      damage_mortals="1" 
+      physics_explosion_power.min="1.7" 
+      physics_explosion_power.max="2.3" 
+      physics_throw_enabled="1"
+      shake_vegetation="1" 
+      sparks_count_max="20" 
+      sparks_count_min="7" 
+      sparks_enabled="1" 
+      stains_enabled="1" 
+      stains_radius="15" 
+      delay.min="1"
+      delay.max="4"
+      explosion_delay_id="1"
+
+      >
+    </config_explosion>
+  </ExplodeOnDamageComponent>
+
+
+</Entity>

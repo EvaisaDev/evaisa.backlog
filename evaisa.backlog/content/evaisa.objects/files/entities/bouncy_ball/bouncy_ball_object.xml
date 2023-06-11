@@ -1,0 +1,107 @@
+<Entity tags="mortal" >
+
+  <!-- mortal is required so it can explode -->
+
+  <Base file="data/entities/base_item_physics.xml" >
+    <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/evaisa.backlog/content/evaisa.objects/files/entities/bouncy_ball/bouncy_ball.png"
+    material="bounce_mat"
+  ></PhysicsImageShapeComponent>
+  </Base>
+
+ <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="1"
+    send_collision_messages="1"
+  ></PhysicsBodyComponent>
+ 
+ 
+ 
+ 
+ <PhysicsThrowableComponent
+    _tags="enabled_in_world"
+    max_throw_speed="190"
+    throw_force_coeff="1.55"
+    attach_to_surfaces_knife_style="0"
+    min_torque="6"
+    max_torque="9"
+  ></PhysicsThrowableComponent>
+ 
+ <SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="1.5"
+    offset_y="8"
+    image_file="mods/evaisa.backlog/content/evaisa.objects/files/entities/bouncy_ball/bouncy_ball_hand.png"
+  ></SpriteComponent>
+
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="Jester's Ball"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    ui_sprite="mods/evaisa.backlog/content/evaisa.objects/files/entities/bouncy_ball/bouncy_ball_hand.png"
+    ui_description="A magically infused rubber ball."
+    preferred_inventory="QUICK"
+  ></ItemComponent>
+
+  <AbilityComponent
+    ui_name="Jester's Ball"
+    throw_as_item="1"
+  ><gun_config
+    deck_capacity="0"
+  ></gun_config>
+  </AbilityComponent>
+ 
+ <ProjectileComponent
+		_tags="enabled_in_world"
+		lifetime="100000"
+		penetrate_entities="1"
+		never_hit_player="1"
+		damage="1"
+	></ProjectileComponent>
+	
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_blue"
+		offset.x="3.5"
+		offset.y="-3.5"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="1"
+		count_max="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		area_circle_radius.max="5"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		lifetime_min="2.5"
+		lifetime_max="30.5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="0.5"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		collide_with_grid="0"
+		gravity.y="0.0"
+		render_back="1"
+		>
+	</ParticleEmitterComponent>
+</Entity>

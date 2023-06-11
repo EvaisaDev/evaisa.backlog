@@ -1,0 +1,54 @@
+<Entity>
+
+    <ParticleEmitterComponent 
+		emitted_material_name="spark_purple_bright"
+		offset.x="0"
+		offset.y="0"
+		count_min="20"
+		count_max="20"
+		gravity.y="-50"
+		lifetime_min="5"
+		lifetime_max="5"
+		airflow_force="0.6"
+		airflow_time="0.1"
+		airflow_scale="0.03"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+	</ParticleEmitterComponent>		
+
+  	<ParticleEmitterComponent 
+		emitted_material_name="spark_purple_bright"
+		gravity.y="-1.0"
+		lifetime_min="5"
+		lifetime_max="5"
+		count_min="1"
+		count_max="1"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="5"
+		area_circle_radius.max="30"
+		cosmetic_force_create="0"
+		attractor_force="20"
+		airflow_force="0.3"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+    <LightComponent 
+        _enabled="1" 
+        radius="50"
+        fade_out_time="1.5" 
+        r="255"
+        g="255"
+        b="255" >
+    </LightComponent>
+</Entity>

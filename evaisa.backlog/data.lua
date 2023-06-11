@@ -19,6 +19,14 @@ local backlog_mods = {
         id = "evaisa.properinheritance",
         has_init = true,
     },
+    {
+        id = "evaisa.lidar",
+        has_init = true,
+    },
+    {
+        id = "evaisa.objects",
+        has_init = true,
+    },
 }
 
 return backlog_mods

@@ -1,8 +1,8 @@
 
 <Mod
-	name="Eva's Archives"
-	description="All my unfinished and scrapped mods in one big pile."
-	request_no_api_restrictions="0"	
+	name="LIDAR"
+	description="Noita gamemode based on LIDAR"
+	request_no_api_restrictions="1"	
 	is_game_mode="0"
 	is_translation="0"
 	ui_newgame_name=""
